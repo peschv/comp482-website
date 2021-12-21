@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- Login page -->
+<html lang="en-CA">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles/login.css"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NB REALty Prices</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="header-buttons">
+          <!--Redirects to login page -->
+          <a class="login-button login-false" id="login-text" href="login.html"></a>
+          <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
+        </div>
+        <!--Collapsible main menu-->
+        <div class="menu">
+          <ul id="ham-list">
+            <!--X button closes side menu-->
+            <li><a class="menu-unselected" id="close">X</a></li>
+            <!--Redirects to home page-->
+            <li><a class="menu-unselected" href="home.html">Home</a></li>
+            <!--Redirects to search listings page -->
+            <li><a class="menu-unselected" href="search-listings.html">Search Listings</a></li>
+            <!--Redirects to statistics page -->
+            <li><a class="menu-unselected" href="statistics.html">Statistics</a></li>
+            <!--Redirects to FAQ page -->
+            <li><a class="menu-unselected" href="faq.html">FAQ</a></li>
+            <!--Redirects to about page -->
+            <li><a class="menu-unselected" href="about.html">About</a></li>
+            <!--Redirects to my account page -->
+            <li><a class="menu-unselected" id="my-account" href="my-account.html">My Account</a></li>
+            <!--Redirects to my lists page -->
+            <li><a class="menu-unselected" id="my-lists" href="my-lists.html">My Lists</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--Site title-->
+      <div class="header-right">
+        <!--Redirects to home page -->
+        <a class="site-title" href="home.html">NB REALty Prices</a>
+      </div>
+    </div>
+
+    <div class="success-container hide">
+            <h3 class="success-title">Success!</h3>
+        <div class="success-message">
+            <p>Thank you for signing up for an account.</p>
+            <p>Please check your email to click the Confirm Account link.</p>
+        </div>
+        <div class="confetti-button-container">
+            <button class="more-confetti">More confetti?</button>
+        </div>
+    </div>
+    <!--Site content-->
+    <div class="site-content">
+      <!--Login form-->
+      <div class="login-form">
+        <!--Subtitle-->
+        <div class="subtitle">
+          <h2>My Account Login</h2>
+        </div>
+        <div class="error-message login-error hide">
+            <p>An error occurred during login. Please try again</p>
+        </div>
+        <!--Source: https://www.w3schools.com/howto/howto_css_login_form.asp-->
+        <form>
+          <label for="email">Email</label>
+          <input class="user-email" type="text" placeholder="Enter email" name="email" required>
+          <p class="error-message email-error hide">Error: please enter a valid email address.</p>
+          <label for="pswd">Password</label>
+          <input id="password1" type="password" placeholder="Enter password" name="pswd" required>
+          <p class="password1-error error-message hide">Error: password must be at least 8 characters long</p>
+          <button id="form-login-button" type="button">Login</button>
+          <label> <input type="checkbox" checked="checked" name="remember"> Remember me</label>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </form>
+      </div>
+      <div class="signup-container">
+        <div class="reveal-signup-form">
+          <p>Don't have an account? No problem!</p>
+          <p id="arrow-prompt-text">Click the arrow to sign up:</p>
+          <img id="arrow-signup-form" src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="Menu"/>
+        </div>
+
+        <!--Signup form-->
+        <div class="signup-form hide">
+          <!--Subtitle-->
+          <div class="subtitle">
+            <h2>Sign Up For An Account</h2>
+          </div>
+          <div class="error-message signup-error hide">
+            <p>An error occurred during login. Please try again</p>
+          </div>
+          <!--Source: https://www.w3schools.com/howto/howto_css_login_form.asp-->
+          <form>
+            <label for="email">Email</label>
+            <input class="user-email" type="text" placeholder="Enter email" name="email" required>
+            <p class="error-message email-error hide">Error: please enter a valid email address.</p>
+            <label for="pswd">Password</label>
+            <input id="password2" type="password" placeholder="Enter password" name="pswd" required>
+            <p class="password2-error error-message hide">Error: password must be at least 8 characters long</p>
+            <label for="pswd">Confirm Password</label>
+            <input id="password3" type="password" placeholder="Re-enter password" name="pswd" required>
+            <p class="password3-error error-message hide">Error: passwords do not match.</p>
+            <button id="form-signup-button" type="button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a>NB REALty Prices</a>
+      <a>©2021</a>
+    </div>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/openMenu.js"></script>
+    <script type="text/javascript" src="./scripts/loginStatus.js"></script>
+    <script type="text/javascript" src="./scripts/loginPage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  </body>
+</html>

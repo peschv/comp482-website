@@ -1,0 +1,232 @@
+/* CSS for my-account.html */
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial';
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.site-content {
+  border-top: 1px dotted #dee0e0;
+  margin-bottom: 15px;
+}
+/* Footer of page */
+.footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px dotted #dee0e0;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+/* Header container for navigation buttons and site title */
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+}
+/* Right part of header containing site title */
+.header-right {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: 2%;
+}
+/* Header buttons */
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2px;
+}
+/* Site title */
+.site-title {
+  color: rgb(0, 102, 116);
+  font-size: 20px;
+  top: 0.5em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.site-title:hover{
+  color: rgb(0, 153, 153);
+}
+/* Icon for collapsible menu */
+#menu-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 100;
+}
+/* Collapsible menu */
+.menu {
+  display: none;
+  transition: opacity 400ms ease 0s;
+  transform: translate(0px, 0px);
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  left: 0;
+  height: 100%;
+  max-width: 300px;
+  width: auto;
+  text-align: center;
+  line-height: 35px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(222, 224, 224, 0.829),
+    rgb(222, 224, 224),
+    rgb(222, 224, 224),
+    rgba(222, 224, 224, 0.829));
+}
+/* Selected items from site menu */
+.menu-selected {
+  color:rgb(0, 153, 153);
+  text-decoration: none;
+}
+/* Unselected items from site menu */
+.menu-unselected {
+  color: rgb(19, 11, 3);
+  text-decoration: none;
+}
+/* Hover over unselected items from site menu */
+.menu-unselected:hover {
+  color: rgb(0, 153, 153);
+}
+/* Close button for menu */
+#close {
+  position: relative;
+  text-align: right;
+  cursor: pointer;
+}
+/* List of items in menu */
+#ham-list {
+  color: rgb(19, 11, 3);
+  list-style: none;
+  padding: 20px;
+  font-size: 25px;
+  line-height: 40px;
+}
+.hide {
+  display: none;
+}
+/* Sub-title */
+h2 {
+  color:rgb(80, 138, 120);
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  top: 0.5em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+/* Container for account information */
+.account-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+}
+/* Container for email and name sections */
+.name-container, .email-container {
+  display: flex;
+  flex-direction: row;
+}
+/* Names for email and name sections */
+.name, .email{
+  margin-right: 15px;
+  padding: 3px;
+  font-variant: small-caps;
+}
+/* Account data for email and name */
+.name-data, .email-data {
+  padding: 3px;
+}
+/* Hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+/* Edit buttons for modifying email and name */
+.edit-button {
+  border: 1px solid #8f8f9d;
+  border-radius: 3px;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px  #d5b75e;
+  text-align:center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 30px;
+  margin-top: 15px;
+}
+/* Hover effect for edit buttons */
+.edit-button:hover{
+  box-shadow: 5px 10px #00bcd4;
+}
+/* Error messages if input for name or email was invalid */
+.error-message {
+  color: darkred;
+  font-style: italic;
+  margin-top: -10px;
+}
+/* Container for description section */
+.account-description {
+  background-color: #dee0e0;
+  max-width:  85%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+/* Description and disclaimer section */
+.account-description p{
+  padding: 10px;
+}
+/* Delete button */
+#delete-button {
+  background-color: #8b0000;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  cursor: pointer;
+  max-width: 90px;
+  border-radius: 2px;
+  border: none;
+}
+/* Display warning when user hovers over delete button */
+.delete-account:hover + .hide {
+  display: block;
+  color: #9c0500;
+  font-style: italic;
+}
+
+
+/* Modal styling obtained from the following source code:
+ * Author: W3 Schools
+ * Code: https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}

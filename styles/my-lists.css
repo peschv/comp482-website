@@ -1,0 +1,397 @@
+/* CSS for my-lists.html */
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial';
+}
+.site-content {
+  border-top: 1px dotted #dee0e0;
+  margin-bottom: 15px;
+}
+/* Footer of page */
+.footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px dotted #dee0e0;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+/* Header container for navigation buttons and site title */
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+}
+/* Right part of header containing site title */
+.header-right {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: 2%;
+}
+/* Header buttons */
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2px;
+}
+/* Site title */
+.site-title {
+ color: rgb(0, 102, 116);
+  font-size: 20px;
+  top: 0.5em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.site-title:hover{
+  color: rgb(0, 153, 153);
+}
+/* Icon for collapsible menu */
+#menu-icon {
+  position: relative;
+  z-index: 100;
+}
+/* Collapsible menu */
+.menu {
+  display: none;
+  transition: opacity 400ms ease 0s;
+  transform: translate(0px, 0px);
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  left: 0;
+  height: 100%;
+  max-width: 300px;
+  width: auto;
+  text-align: center;
+  line-height: 35px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(222, 224, 224, 0.829),
+    rgb(222, 224, 224),
+    rgb(222, 224, 224),
+    rgba(222, 224, 224, 0.829));
+}
+/* Selected items from site menu */
+.menu-selected {
+  color:rgb(0, 153, 153);
+  text-decoration: none;
+ }
+/* Unselected items from site menu */
+.menu-unselected {
+  color: rgb(19, 11, 3);
+  text-decoration: none;
+}
+/* Hover over unselected items from site menu */
+.menu-unselected:hover {
+   color: rgb(0, 153, 153);
+}
+/* Close button for menu */
+#close {
+  position: relative;
+  text-align: right;
+  cursor: pointer;
+}
+/* List of items in menu */
+#ham-list {
+  color: rgb(19, 11, 3);
+  list-style: none;
+  padding: 20px;
+  font-size: 25px;
+  line-height: 40px;
+}
+/* Sub-title */
+h2 {
+  color: teal;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  top: 0.5em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+.hide {
+  display: none;
+}
+/* Instructions at top of page */
+.instructions {
+  background-color: #dee0e0;
+  max-width: 85%;
+  padding: 10px;
+  text-align: center;
+  margin-left: 5%;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+/* Instructions title at top of page */
+#instructions-title {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-style: normal;
+  margin: 0px;
+}
+/* List elements of instructions section */
+.instructions li {
+  list-style: inside;
+  text-align: left;
+}
+/* List elements */
+li {
+  list-style: none;
+}
+/* Span elements of instructions section */
+li span {
+   font-style: italic;
+}
+/* Container for top horizontal navigation bar */
+.my-lists-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgba(189, 183, 107, 0.5);
+  margin-left: 2%;
+  margin-right: 2%;
+  cursor: pointer;
+  min-height: 100%;
+}
+/* Each element in top horizontal nav bar */
+.my-lists-menu a {
+  text-decoration: none;
+  text-align: center;
+  color: #31393b;
+  padding: 13px;
+  flex: 1 1 auto;
+}
+/* Hover over each element in the top nav bar */
+.my-lists-menu a:hover {
+  background-color: rgb(189, 183, 107);
+  border-radius: 5px;
+}
+/* Each non-href element in the top nav bar */
+#menu-new-list, #menu-customize-view, #menu-manage-lists {
+  border-left: 1px dotted rgb(189, 183, 107);
+}
+/* Headers for subsections */
+h3 {
+  margin-right: 5px;
+  color: #445052;
+}
+/* Checkboxes to display columns */
+.columns-checkbox {
+  cursor: pointer;
+}
+/*Error message when user deselects all table columns*/
+.error-message {
+  color: red;
+  border: none;
+}
+/* Customize view and manage list buttons in modal */
+#customize-view-button, #manage-list-button {
+  width: 100%;
+}
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+/* Container for all lists */
+.list-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+/* Container for list heading, containing list name and show list elements */
+.list-heading-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  cursor: default;
+}
+/* Buttons for show list elements */
+.list-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  align-items: center;
+}
+/* Show List text */
+.show-text {
+  margin-top: 3%;
+  color: rgb(0, 102, 116);
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* Image icon elements */
+.icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+/* Show List arrow icon button */
+.show-button {
+  z-index: 1;
+}
+/* Table contained in each list */
+table {
+  text-align: center;
+}
+/* Table heading */
+thead {
+  background-color: #ddd;
+  color: rgb(71, 73, 74);
+  font-size: 15px;
+  padding: 3px;
+}
+/* Table body */
+tbody {
+  cursor: default;
+}
+/* Hover over table rows */
+tbody tr:hover {
+  background-color: #dcf3ff;
+}
+/* Every second row in table body */
+tbody tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+/* Hover over every second table row */
+tbody tr:nth-child(even):hover{
+  background-color: #c6dae5;
+}
+/* Table body checkboxes */
+tbody input {
+  cursor: pointer;
+}
+/* Modal elements when lists are empty */
+.empty {
+  text-decoration: none;
+  cursor: not-allowed;
+}
+/* Container for Deselect All and Delete Selected Items buttons for table  */
+.table-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin: 10px;
+}
+/* Deselect All and Delete Selected Items buttons */
+.table-button {
+  border: 1px solid #8f8f9d;
+  border-radius: 3px;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  /*box-shadow: 5px 10px  #d5b75e;*/
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(213, 183, 94, 0.3);
+}
+/* Hover over table buttons */
+.table-button:hover {
+  box-shadow: 1px 1px 1px 1px rgba(0, 188, 212, 0.2);
+}
+/* Delete Selected Items button */
+.delete-items {
+  margin-left: 15px;
+}
+/* Container for lists within Manage Lists modal */
+.manage-list {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 10px;
+}
+/* Name of list within Manage Lists modal */
+.manage-list-name {
+  margin-right: 3%;
+}
+/* Each list item in Manage Lists modal */
+.manage-list-actions {
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 3%;
+  padding-left: 10px;
+}
+/* Hover over each list item in Manage Lists modal */
+.manage-list-actions:hover {
+  color: teal;
+}
+/* Share List element in Manage Lists modal */
+.share-list {
+  border-left: none;
+}
+/* Close Manage Lists modal button */
+.modal-content-button {
+  justify-content: center;
+  border: 1px solid #8f8f9d;
+  border-radius: 3px;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(213, 183, 94, 0.3);
+}
+/* Hover over close button in Modal Lists modal */
+.modal-content-button:hover {
+  box-shadow: 1px 1px 1px 1px rgba(0, 188, 212, 0.2);
+}
+/* Icon arrow source */
+.image-source {
+  font-size: 14px;
+  color: rgb(102,109,109);
+  margin-top: 40px;
+  text-align: center;
+}
+/* Styling for print function.
+ * Hide all elements except site title, list name and table.
+ */
+@media print {
+  .header-buttons, .instructions, .list-buttons, h3, .my-lists-menu, .modal, button, .checkbox {
+    display:none;
+  }
+  .site-title {
+      display: block;
+  }
+  /*Separate rows by black line*/
+  tr {
+    outline: thin solid;
+  }
+}
+
+
+/* Modal styling obtained from the following source code:
+ * Author: W3 Schools
+ * Code: https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+#modal-share-lists {
+  text-align: center;
+}

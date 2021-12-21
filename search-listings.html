@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- Search Listings page -->
+<html lang="en-CA">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles/search-listings.css"/>
+    <!-- Ice theme for Tablesorter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/theme.ice.min.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NB REALty Prices</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="header-buttons">
+          <!--Redirects to login page -->
+          <a class="login-button login-false" id="login-text" href="login.html"></a>
+          <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
+        </div>
+        <!--Collapsible main menu-->
+        <div class="menu">
+          <ul id="ham-list">
+            <!--X button closes side menu-->
+            <li><a class="menu-unselected" id="close">X</a></li>
+            <!--Redirects to home page-->
+            <li><a class="menu-unselected" href="home.html">Home</a></li>
+            <!--Redirects to search listings page -->
+            <li><a class="menu-selected" href="search-listings.html">Search Listings</a></li>
+            <!--Redirects to statistics page -->
+            <li><a class="menu-unselected" href="statistics.html">Statistics</a></li>
+            <!--Redirects to FAQ page -->
+            <li><a class="menu-unselected" href="faq.html">FAQ</a></li>
+            <!--Redirects to about page -->
+            <li><a class="menu-unselected" href="about.html">About</a></li>
+            <!--Redirects to my account page -->
+            <li><a class="menu-unselected" id="my-account" href="my-account.html">My Account</a></li>
+            <!--Redirects to my lists page -->
+            <li><a class="menu-unselected" id="my-lists" href="my-lists.html">My Lists</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-right">
+        <!--Redirects to home page -->
+        <a class="site-title" href="home.html">NB REALty Prices</a>
+      </div>
+    </div>
+
+    <!--Site content-->
+    <div class="site-content">
+      <!--Subtitle-->
+      <div class="subtitle">
+        <h2>Search Listings</h2>
+      </div>
+      <div class="selection-container">
+        <div class="instructions">
+          <p id="instructions-title">How to use this page:</p>
+          <ul id="instructions-list">
+            <li>Select a city and year from the dropdown buttons.</li>
+            <li>Click the checkboxes to add/remove the table columns.</li>
+            <li>Press "Search" button.</li>
+            <li>Sort your search results by ascending/descending by clicking the
+              table headers <span>(ex. clicking "Address" will sort addresses
+                alphabetically in ascending order).</span></li>
+            <li>Select print button to print your search results.</li>
+          </ul>
+        </div>
+        <!--Source code: https://stackoverflow.com/a/24849497-->
+        <form>
+          <div class="selection-dropdown" id="city-selection-container">
+            <p>Select a city:</p>
+            <select class="toggle-city" id="city-dropdown">
+              <option value="default">Choose city...</option>
+              <option value="bathurst" data-show=".bathurst">Bathurst</option>
+              <option value="fredericton" data-show=".fredericton">Fredericton</option>
+              <option value="miramichi" data-show=".miramichi">Miramichi</option>
+              <option value="moncton" data-show=".moncton">Moncton</option>
+              <option value="saint-john" data-show=".saint-john">Saint John</option>
+            </select>
+          </div>
+          <div class="selection-dropdown" id="date-selection-container">
+            <p>Select date:</p>
+            <select class="toggle-date" id="date-dropdown">
+              <option value="2018" data-show=".2018">2018</option>
+              <option value="2019" data-show=".2019">2019</option>
+              <option value="2020" data-show=".2020">2020</option>
+              <option value="2021" data-show=".2021">2021</option>
+            </select>
+          </div>
+          <div class="selection" id="column-selector">
+            <p>Select which columns to display:</p>
+            <ul id="checkbox-list">
+              <li><input type="checkbox" class="columns-checkbox" value="1" checked/>Address</li>
+              <li><input type="checkbox" class="columns-checkbox" value="2" checked/>City</li>
+              <li><input type="checkbox" class="columns-checkbox" value="3" checked/>Date Sold</li>
+              <li><input type="checkbox" class="columns-checkbox" value="4" checked/>Listing Price ($)</li>
+              <li><input type="checkbox" class="columns-checkbox" value="5" checked/>Sold Price ($)</li>
+              <li><input type="checkbox" class="columns-checkbox" value="6" checked/>Difference (as $)</li>
+              <li><input type="checkbox" class="columns-checkbox" value="7" checked/>Difference (as %)</li>
+              <li><input type="checkbox" class="columns-checkbox" value="8" checked/>Status</li>
+            </ul>
+            <p class="hide error" id="error-message">Select at least one</p>
+          </div>
+          <div class="search-button-container">
+            <button id="search-button">Search</button>
+          </div>
+        </form>
+        <div class="print" id="print-container">
+          <img class="icon" id="print-icon" src="https://cdn-icons-png.flaticon.com/512/3022/3022251.png" alt="Print"/>
+          <a class="print-text">Print</a>
+        </div>
+      </div>
+      <div class="results-container">
+        <table id="search-table">
+          <thead>
+            <tr class="table-column">
+              <th class="table-input table-checkbox sorter-false" value="1"></th>
+              <th class="columns table-address" value="2">Address</th>
+              <th class="columns table-city" value="3">City</th>
+              <th class="columns table-date" value="4">Date Sold</th>
+              <th class="columns table-listing" value="5">Listing Price ($)</th>
+              <th class="columns table-sold" value="6">Sold Price ($)</th>
+              <th class="columns table-diff-dollar" value="7">Difference (as $)</th>
+              <th class="columns table-diff-percent" value="8">Difference (as %)</th>
+              <th class="columns table-status" value="9">Status</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!--Table contents populated in searchListings.js-->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-buttons-container">
+        <button class="table-button" id="add-selected">Add Selected Items</button>
+        <button class="table-button" id="select-all">Select All</button>
+        <button class="table-button" id="deselect-all">Deselect All</button>
+      </div>
+      <div class="modal hide">
+        <div class="modal-content">
+          <div class="dropdown" id="modal-lists">
+            <p>Select a list to add these items to:</p>
+            <select class="toggle-lists" id="list-selector">
+              <option value="list1" data-show=".list1">My List 1</option>
+              <option value="list2" data-show=".list2">My List 2</option>
+              <option value="list3" data-show=".list3">My List 3</option>
+              <option class="add-new-list" value="newlist" data-show=".newlist">Add New List...</option>
+            </select>
+          </div>
+          <div class="modal-buttons-container">
+            <button class="modal-button" id="modal-cancel-button">Cancel</button>
+            <button class="modal-button" id="modal-add-button">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a>NB REALty Prices</a>
+      <a>©2021</a>
+    </div>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/openMenu.js"></script>
+    <script type="text/javascript" src="./scripts/loginStatus.js"></script>
+    <script type="text/javascript" src="./scripts/searchListings.js"></script>
+    <script type="text/javascript" src="./scripts/searchLoggedIn.js"></script>
+    <!-- load jQuery and tablesorter scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+    <!-- tablesorter widgets -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.widgets.min.js"></script>
+  </body>
+</html>

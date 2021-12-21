@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- My Account page -->
+<html lang="en-CA">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles/my-account.css"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NB REALty Prices</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="header-buttons">
+          <!--Redirects to login page -->
+          <a class="login-button login-false" id="login-text" href="login.html"></a>
+          <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
+        </div>
+        <!--Collapsible main menu-->
+        <div class="menu">
+          <ul id="ham-list">
+            <!--X button closes side menu-->
+            <li><a class="menu-unselected" id="close">X</a></li>
+            <!--Redirects to home page-->
+            <li><a class="menu-unselected" href="home.html">Home</a></li>
+            <!--Redirects to search listings page -->
+            <li><a class="menu-unselected" href="search-listings.html">Search Listings</a></li>
+            <!--Redirects to statistics page -->
+            <li><a class="menu-unselected" href="statistics.html">Statistics</a></li>
+            <!--Redirects to FAQ page -->
+            <li><a class="menu-unselected" href="faq.html">FAQ</a></li>
+            <!--Redirects to about page -->
+            <li><a class="menu-unselected" href="about.html">About</a></li>
+            <!--Redirects to my account page -->
+            <li><a class="menu-selected" id="my-account" href="my-account.html">My Account</a></li>
+            <!--Redirects to my lists page -->
+            <li><a class="menu-unselected" id="my-lists" href="my-lists.html">My Lists</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--Site title-->
+      <div class="header-right">
+        <!--Redirects to home page -->
+        <a class="site-title" href="home.html">NB REALty Prices</a>
+      </div>
+    </div>
+
+    <!--Site content-->
+    <div class="site-content">
+      <!--Subtitle-->
+      <div class="subtitle">
+        <h2>My Account</h2>
+      </div>
+      <div class="account-container">
+        <div class="name-container">
+          <p class="name">Name:</p>
+          <p class="name-data">Maude Toulouse</p>
+          <button class="edit-button" id="edit-name">Edit</button>
+        </div>
+        <div class="error-message hide">
+          <p id="name-error">Error: Your account name cannot be blank.</p>
+        </div>
+        <div class="email-container">
+          <p class="email">Email:</p>
+          <p class="email-data">m.toulouse@gmail.com</p>
+          <button class="edit-button" id="edit-email">Edit</button>
+        </div>
+        <div class="error-message hide">
+          <p id="email-error">Error: You must enter a valid email address.</p>
+        </div>
+
+        <div class="account-description">
+          <p>
+            Your data privacy is important to us. The only data we store is your email address,
+            the name you provided upon registration and the lists you create. This information is
+            not distributed to anyone outside our organization.
+          </p>
+          <p>
+            Disclaimer: All the information on this website is published for general information purposes.
+            Although we try our best to provide accurate information, we do not make any guarantees about
+            the reliability or accuracy of this information.
+            Any action you take due to information you find on this website is strictly at your own risk.
+          </p>
+        </div>
+        <div class="delete-account warning">
+          <button id="delete-button">Delete Account</button>
+        </div>
+        <div class="hide">
+          <p id="delete-warning">Warning: this action will permanently delete your account and your data cannot be recovered.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a>NB REALty Prices</a>
+      <a>©2021</a>
+    </div>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/openMenu.js"></script>
+    <script type="text/javascript" src="./scripts/loginStatus.js"></script>
+    <script type="text/javascript" src="./scripts/editAccount.js"></script>
+  </body>
+</html>

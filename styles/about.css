@@ -9,6 +9,7 @@ body {
 .site-content {
   border-top: 1px dotted #dee0e0;
   margin: 0px 35px 35px 35px;
+
 }
 /* Footer of page */
 .footer {
@@ -127,9 +128,10 @@ h2 {
   align-items: center;
 }
 /* Image element */
-.about-image {
-  position: relative;
-  max-height: 300px;
+#about-image {
+  width: 600px;
+  height: auto;
+  border-radius: 3px;
 }
 /* Text crediting source of image */
 #image-source {
@@ -139,4 +141,29 @@ h2 {
 }
 span {
   font-style: italic;
+}
+/* If screen size is less than 900px wide */
+@media only screen and (max-width: 900px) {
+  /* Image element */
+  #about-image {
+    width: 400px;
+  }
+}
+/* If screen size is less than 650px wide */
+@media only screen and (max-width: 650px) {
+  /* Container for FAQ questions and image */
+  .faq-container {
+    flex-direction: column;
+  }
+  /* Image element */
+  #about-image {
+    width: 300px;
+  }
+}
+/* If screen size is less than 500px wide */
+@media only screen and (max-width: 500px) {
+  /* Image element */
+  #about-image {
+    width: 250px;
+  }
 }

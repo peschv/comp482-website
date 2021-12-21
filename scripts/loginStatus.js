@@ -59,11 +59,10 @@ window.addEventListener('load', function() {
  * displayLoginSignup().
 */
 window.onload = function(){
-  localStorage.setItem('logged-in', 'false');
-  console.log("VALUE:"+localStorage.getItem('logged-in'));
   if(localStorage.getItem('logged-in') === 'true') { //If user logged in
     displayLogout();
   } else { //If user not logged in
+    localStorage.setItem('logged-in', 'false');
     displayLoginSignup();
   }
 };

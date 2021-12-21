@@ -3,7 +3,7 @@
  * input values are valid, and displays error messages if they are invalid.
  * If signup form inputs are valid, then replace page content with a success
  * message and a confetti animation using the Canvas Confetti plugin. If login
- * form inputs are valid, redirect user to the homepage.  
+ * form inputs are valid, redirect user to the homepage.
 */
 
 //Login button text
@@ -19,8 +19,8 @@ function showForm() {
  * If user enters an invalid email, as determined by validateEmail(), display
  * email error message. If password is of insufficient length, then display
  * password error message. Otherwise if both email and password are in a valid
- * format then log user into account by setting localStorage to 'login-true',
- * calling displayLogout() and redirect user to the my-account.html page.
+ * format then log user into account by setting localStorage 'logged-in' to
+ * 'true', calling displayLogout() and redirect user to the my-account.html page.
  * If an unknown error occurs during login, display error message and ask user
  * to try again.
 */
@@ -41,8 +41,7 @@ function login() {
   } else if (!passwordLength(pswd)) { //If password is too short
     pswdError.classList.remove("hide");
   } else if (validateEmail(input) && passwordLength(pswd)) { //If password and email are valid
-    localStorage.setItem('login-true',this.checked);
-    localStorage.removeItem('login-false');
+    localStorage.setItem('logged-in', 'true');
     displayLogout();
     window.location.replace("my-account.html");
   } else { //If unknown error occurred

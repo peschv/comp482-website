@@ -26,8 +26,8 @@ body {
 /* Icon for menu */
 #menu-icon {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   z-index: 100;
 }
@@ -171,8 +171,15 @@ form {
 }
 /*Submit button for newsletter form*/
 #submit-button {
+  margin: 10px;
+  border: 1px solid #8f8f9d;
+  border-radius: 3px;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px  #d5b75e;
+  text-align:center;
   letter-spacing: 1px;
-  margin-left: 15px;
+  cursor: pointer;
 }
 /* Message that displays when user successfully submits form */
 .success-message{
@@ -185,5 +192,25 @@ form {
   .animate__animated {
     animation: animate__fadeIn !important;
     animation-duration: 2s;
+  }
+}
+/* If screen size is less than 780px wide */
+@media only screen and (max-width: 780px) {
+  /* Form for newsletter email signup */
+  form {
+    flex-direction: column;
+  }
+  /*Image element*/
+  #home-image {
+    width: 400px;
+    height: auto;
+  }
+}
+/* If screen size is less than 415px wide */
+@media only screen and (max-width: 415px) {
+  /*Image element*/
+  #home-image {
+    width: 300px;
+    height: auto;
   }
 }

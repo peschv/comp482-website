@@ -43,7 +43,7 @@ body {
 /* Site title */
 .site-title {
   color: rgb(0, 102, 116);
-  font-size: 20px;
+  font-size: 25px;
   top: 0.5em;
   font-variant: small-caps;
   letter-spacing: 1px;
@@ -55,8 +55,8 @@ body {
 /* Icon for collapsible side menu */
 #menu-icon {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   z-index: 100;
 }
@@ -113,7 +113,7 @@ body {
 h2 {
   color:rgb(80, 138, 120);
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   width: 100%;
   top: 0.5em;
   font-variant: small-caps;
@@ -137,6 +137,7 @@ h2 {
 /* Instructions title at top of page */
 #instructions-title {
   font-variant: small-caps;
+  font-size: 20px;
 }
 /* P elements in instructions section */
 .instructions p {
@@ -155,9 +156,6 @@ li {
 span {
   font-style: italic;
 }
-p {
-  font-style: italic;
-}
 /* Select element of the dropdown buttons */
 select {
   cursor: pointer;
@@ -167,12 +165,17 @@ select {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(53, 74, 73);
 }
 /* Dropdown buttons for selecting city and date */
 #city-dropdown, #date-dropdown {
   margin-left: 15px;
   height: 35px;
   margin-top: 10px;
+  font-size: 15px;
 }
 /* Hovering over city and date dropdown buttons */
 #city-dropdown:hover, #date-dropdown:hover {
@@ -228,7 +231,7 @@ select {
 }
 /* Container for print section */
 #print-container{
-  margin-right: 0;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -334,4 +337,9 @@ tbody tr:nth-child(even){
 /* Hover over modal buttons */
 .modal-button:hover {
   box-shadow: 1px 1px 1px 1px rgba(0, 188, 212, 0.2);
+}
+/* Font size in table */
+.tablesorter-ice th,
+.tablesorter-ice thead td {
+ font:16px/18px Arial,Sans-serif !important;
 }

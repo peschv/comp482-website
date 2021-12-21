@@ -241,7 +241,7 @@ function displayCheckboxes(){
   //Loop through all entries in table
   for(var i=0;i<ch.length;i++){
     //If user is not logged in, hide checkboxes
-    if (localStorage.getItem('login-false')) {
+    if (localStorage.getItem('logged-in').value === 'false') {
       ch[i].classList.add("hide");
     } else {
       ch[i].classList.add("show");
@@ -252,7 +252,7 @@ function displayCheckboxes(){
   //Loop through all table buttons at bottom of table
   for(var i=0;i<tb.length; i++){
      //If user is not logged in, hide buttons
-    if (localStorage.getItem('login-false')) {
+    if (localStorage.getItem('logged-in').value === 'false') {
       tb[i].classList.add("hide");
     } else {
       tb[i].classList.add("show");

@@ -43,7 +43,7 @@ body {
 /* Site title */
 .site-title {
  color: rgb(0, 102, 116);
-  font-size: 20px;
+  font-size: 25px;
   top: 0.5em;
   font-variant: small-caps;
   letter-spacing: 1px;
@@ -56,6 +56,8 @@ body {
 #menu-icon {
   position: relative;
   z-index: 100;
+  width: 50px;
+  height: 50px;
 }
 /* Collapsible menu */
 .menu {
@@ -110,7 +112,7 @@ body {
 h2 {
   color: teal;
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   width: 100%;
   top: 0.5em;
   font-variant: small-caps;
@@ -349,7 +351,7 @@ tbody input {
 .image-source {
   font-size: 14px;
   color: rgb(102,109,109);
-  margin-top: 40px;
+  margin: 55px 0px 25px 0px;
   text-align: center;
 }
 /* Styling for print function.

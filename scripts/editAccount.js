@@ -103,8 +103,7 @@ function deleteAccount() {
 function closeAccount() {
   div.removeClass('login-true');
   div.addClass('login-false');
-  localStorage.removeItem('login-true');
-  localStorage.setItem('login-false',this.checked);
+  localStorage.setItem('logged-in', 'false');
   document.getElementById("login-text").innerHTML = "Login/Signup";
   document.getElementById('my-account').style.display = "none";
   document.getElementById('my-lists').style.display = "none";

@@ -329,10 +329,22 @@ tbody tr:nth-child(even){
 }
 /* Modal buttons */
 .modal-button {
+  margin: 20px 20px 0px 20px;
   cursor: pointer;
-  padding: 5px;
+  padding: 8px;
   letter-spacing: 1px;
   box-shadow: 1px 1px 1px 1px rgba(213, 183, 94, 0.3);
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 25px;
+  border: 1px solid #888;
+  width: 400px; /* Could be more or less, depending on screen size */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 /* Hover over modal buttons */
 .modal-button:hover {
@@ -342,4 +354,16 @@ tbody tr:nth-child(even){
 .tablesorter-ice th,
 .tablesorter-ice thead td {
  font:16px/18px Arial,Sans-serif !important;
+}
+/* Dropdown list selection in Add Selected modal */
+#list-selector {
+  font-size: 16px;
+}
+/* If screen size is less than 470px wide */
+@media only screen and (max-width: 470px) {
+  /* Modal Content/Box */
+  .modal-content {
+    padding: 15px;
+    width: 250px;
+  }
 }

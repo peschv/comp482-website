@@ -390,10 +390,18 @@ tbody input {
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 15px;
+  padding: 25px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 400px;
 }
 #modal-share-lists {
   text-align: center;
+}
+/* If screen size is less than 470px wide */
+@media only screen and (max-width: 470px) {
+  /* Modal Content/Box */
+  .modal-content {
+    padding: 15px;
+    width: 250px;
+  }
 }

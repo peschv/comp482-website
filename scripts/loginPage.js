@@ -6,9 +6,6 @@
  * form inputs are valid, redirect user to the homepage.
 */
 
-//Login button text
-var div = document.getElementsByClassName("login-button")[0];
-
 //Display signup form element
 function showForm() {
   document.getElementsByClassName("signup-form")[0].classList.remove("hide");
@@ -128,8 +125,6 @@ function passwordLength() {
  * menu.
 */
 function displayLogout() {
-  div.addClass('login-true');
-  div.removeClass('login-false');
   document.getElementById("login-text").innerHTML = "Logout";
   document.getElementById('my-account').style.display = "block";
   document.getElementById('my-lists').style.display = "block";

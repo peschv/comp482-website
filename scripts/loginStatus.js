@@ -10,9 +10,6 @@
  * When user clicks "Logout", they will be redirected to the homepage.
 */
 
-//Login button text
-var div = document.getElementsByClassName("login-button")[0];
-
 /*
  * Log user out of website, call displayLoginSign() to change the text at top
  * left corner of page to "Login/Signup" from "Logout" and automatically
@@ -20,8 +17,7 @@ var div = document.getElementsByClassName("login-button")[0];
  */
 function logout() {
   //Only proceed if user is logged in
-  if (localStorage.getItem('logged-in').value === "true") {
-    div.removeClass('login-true');
+  if (localStorage.getItem('logged-in') === "true") {
     displayLoginSignup(); //Replace "Logout" text with "Login/Signup"
     window.location.replace("home.html"); //Redirect user to homepage
   }
@@ -33,7 +29,6 @@ function logout() {
  * localStorage 'logged-in' to false.
 */
 function displayLoginSignup() {
-  div.addClass('login-false');
   localStorage.setItem('logged-in', 'false');
   document.getElementById("login-text").innerHTML = "Login/Signup";
   document.getElementById('my-account').style.display = "none";
@@ -48,8 +43,6 @@ function displayLoginSignup() {
  * when user logged in.
 */
 function displayLogout() {
-  div.addClass('login-true');
-  div.removeClass('login-false');
   document.getElementById("login-text").innerHTML = "Logout";
   document.getElementById('my-account').style.display = "block";
   document.getElementById('my-lists').style.display = "block";
@@ -66,7 +59,9 @@ window.addEventListener('load', function() {
  * displayLoginSignup().
 */
 window.onload = function(){
-  if(localStorage.getItem('logged-in').value === 'true') { //If user logged in
+  localStorage.setItem('logged-in', 'false');
+  console.log("VALUE:"+localStorage.getItem('logged-in'));
+  if(localStorage.getItem('logged-in') === 'true') { //If user logged in
     displayLogout();
   } else { //If user not logged in
     displayLoginSignup();

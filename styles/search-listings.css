@@ -219,6 +219,14 @@ select {
 #search-button:hover{
   box-shadow: 5px 10px #00bcd4;
 }
+/* Container for print section */
+#print-container{
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  justify-content: flex-end;
+}
 /* Print button text */
 .print {
   text-decoration: underline;
@@ -229,13 +237,9 @@ select {
   width: 30px;
   height: 30px;
 }
-/* Container for print section */
-#print-container{
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  justify-content: flex-end;
+/* Container for table element */
+.results-container {
+  margin: 15px;
 }
 /* Table element that displays search results */
 table {
@@ -365,5 +369,17 @@ tbody tr:nth-child(even){
   .modal-content {
     padding: 15px;
     width: 250px;
+  }
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
+  }
+}
+/* If screen size is less than 750px wide */
+@media only screen and (max-width: 750px) {
+  /* Container for table element */
+  .results-container {
+    margin: 0px;
   }
 }

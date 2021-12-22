@@ -132,7 +132,7 @@ p {
 .overview-images-container {
   display: flex;
   flex-direction: row;
-  padding: 5%;
+  margin: 25px;
   justify-content: space-between;
 }
 /* Images in Overview section */
@@ -222,5 +222,13 @@ p {
   /* Headers in table */
   .tablesorter th {
     width: 70px;
+  }
+}
+/* If screen size is less than 470px wide */
+@media only screen and (max-width: 470px) {
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
   }
 }

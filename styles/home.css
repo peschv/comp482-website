@@ -213,4 +213,9 @@ form {
     width: 300px;
     height: auto;
   }
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
+  }
 }

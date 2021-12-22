@@ -230,3 +230,15 @@ span.pswd {
 .login-error {
     font-style: italic;
 }
+/* If screen size is less than 490px wide */
+@media only screen and (max-width: 490px) {
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
+  }
+  /* Container for success message */
+  .success-container {
+    margin-top: -10px;
+  }
+}

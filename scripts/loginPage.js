@@ -33,15 +33,15 @@ function login() {
   pswdError.classList.add("hide");
   loginError.classList.add("hide");
 
-  if (!validateEmail(input)) { //If email is invalid
+  if (!validateEmail(input)) { //Email is invalid
     emailError.classList.remove("hide");
-  } else if (!passwordLength(pswd)) { //If password is too short
+  } else if (!passwordLength(pswd)) { //Password is less than 8 characters
     pswdError.classList.remove("hide");
-  } else if (validateEmail(input) && passwordLength(pswd)) { //If password and email are valid
+  } else if (validateEmail(input) && passwordLength(pswd)) { //Both password and email are valid
     localStorage.setItem('logged-in', 'true');
     displayLogout();
     window.location.replace("my-account.html");
-  } else { //If unknown error occurred
+  } else { //Unknown error occurred
      loginError.classList.remove("hide");
   }
 }
@@ -63,28 +63,31 @@ function signup() {
   var pswd3 = document.getElementById("password3"); //Confirm password input field
 
   var emailError = document.getElementsByClassName("email-error")[1]; //Email error
-  var pswd2Error = document.getElementsByClassName("password2-error")[0]; //Password error
-  var pswd3Error = document.getElementsByClassName("password3-error")[0]; //Confirm password error
+  var pswd2Error = document.getElementsByClassName("password2-error")[0]; //Password error for length
+  var pswd3Error = document.getElementsByClassName("password3-error")[0]; //Confirm password error for passwords not matching
 
   //Reset error messages to hidden
   emailError.classList.add("hide");
   pswd2Error.classList.add("hide");
   pswd3Error.classList.add("hide");
 
-  //If email is invalid, display error message
+  //Email is invalid
   if (!validateEmail(email)) {
     emailError.classList.remove("hide");
-  //If passwords don't match, display error message
+  //Password less than 8 characters long
+  } else if (!passwordLength(pswd2)) {
+    pswd2Error.classList.remove("hide");
+  //Passwords do not match
   } else if (!validatePasswords(pswd2,pswd3)) {
     pswd3Error.classList.remove("hide");
-  //If email and passwords are valid, i.e. signup was successful
-  } else if(validateEmail(email) && validatePasswords(pswd2,pswd3)) {
+  //Both email and passwords are valid, i.e. signup was successful
+  } else if(validateEmail(email) && validatePasswords(pswd2,pswd3) && passwordLength(pswd2)) {
     //Hide page contents
     document.getElementsByClassName("site-content")[0].classList.add("hide");
     //Display success message
     document.getElementsByClassName("success-container")[0].classList.remove("hide");
     playConfetti(); //Play confetti
-  //An unknown error occurred
+  //Unknown error occurred
   } else {
     //Display message at top of form indicating an error occurred and to please try again
     document.getElementsByClassName("signup-error")[0].classList.remove("hide");
@@ -104,19 +107,15 @@ function validatePasswords(pswd2, pswd3) {
 }
 
 /*
- * Verify if the password length is at least 8 characters. If so, keep error message
- * hidden for the first password input field. Otherwise, display error message
- * stating length of password must be at least 8 characters.
+ * Take as parameter the password inputted by user. If password length is
+ * at least 8 characters, return true. Else, return false.
 */
-function passwordLength() {
-  var pswd2 = document.getElementById("password2").value; //User's input in password field
-  if (pswd2.length<8) { //If password is too short
-    document.getElementsByClassName("password2-error")[0].classList.remove("hide");
-    //Add another event listener for this input field
-    document.querySelectorAll("INPUT[type='password']")[2].addEventListener("click",function(){passwordLength()});
-  } else { //If password is sufficient length
-    document.getElementsByClassName("password2-error")[0].classList.add("hide");
-  }
+function passwordLength(pswd) {
+  if (pswd.value.length >= 8) {
+    return true;
+  } else {
+    return false;
+ }
 }
 
 /*
@@ -172,9 +171,6 @@ window.addEventListener('load', function() {
   document.getElementById("form-login-button").addEventListener("click", login);
   //Event listener for signup button
   document.getElementById("form-signup-button").addEventListener("click", signup);
-
   //Event listener for more confetti button
   document.getElementsByClassName("more-confetti")[0].addEventListener("click", playConfetti);
-  //Event listener for first password input field in the signup form
-  document.querySelectorAll("INPUT[type='password']")[2].addEventListener("click",function(){passwordLength()});
 });

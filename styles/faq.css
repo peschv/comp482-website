@@ -152,6 +152,14 @@ h2 {
 p {
   margin-right: 5%;
 }
+/* If screen size is less than 470px wide */
+@media only screen and (max-width: 470px) {
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
+  }
+}
 /* If screen size is less than 740px wide */
 @media only screen and (max-width: 740px) {
   /* Container for FAQ questions and image */
@@ -163,6 +171,10 @@ p {
     width: auto;
     height: 250px;
     align-self: center;
+  }
+  /* List of questions and answers */
+  #faq-list {
+    margin-left: -20px;
   }
 }
 /* If screen size is greater than 740px and less than 850px wide */

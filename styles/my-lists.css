@@ -404,4 +404,9 @@ tbody input {
     padding: 15px;
     width: 250px;
   }
+  /* Site title */
+  .site-title {
+    margin-right: 0px;
+    font-size: 20px;
+  }
 }

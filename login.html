@@ -86,9 +86,12 @@
           <p class="password1-error error-message hide">Error: password must be at least 8 characters long</p>
           <!--Login submit button-->
           <button id="form-login-button" type="button">Login</button>
-          <!--Login remember me and forgot password fields-->
+          <!--Remember me checkbox-->
           <label> <input type="checkbox" checked="checked" name="remember"> Remember me</label>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+          <!--Forgot password element-->
+          <a class="forgot-password" href="#">Forgot password?</a>
+          <p class="forgot-password-success hide">An email has been sent to you to reset your password.</p>
+          <p class="forgot-password-error error-message hide">Error: not a valid email address.</p>
         </form> <!--End of login form-->
       </div>
 

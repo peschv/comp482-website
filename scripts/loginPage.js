@@ -172,6 +172,39 @@ function validateEmail(input) {
     );
 }
 
+/*
+ * Display prompt window to allow user to enter the email associated with their
+ * account. If email is valid, as determined by validateEmail(), then close
+ * prompt and display message that an email has been sent to their inbox to
+ * reset their password. If user presses cancel, then close prompt. Otherwise,
+ * if email is invalid, close prompt and display error message.
+ */
+function forgotPassword() {
+   //Open prompt window with user input
+  var email = prompt("Please enter the email address associated with your account so we can send you a reset password email", "Enter email...");
+  var successMsg = document.getElementsByClassName("forgot-password-success")[0];
+  var errorMsg = document.getElementsByClassName("forgot-password-error")[0];
+
+  //Reset forgot password messages
+  successMsg.classList.add("hide");
+  errorMsg.classList.add("hide");
+
+  switch(email) {
+    case null: //User pressed cancel
+        break;
+    default:
+        if (validateEmail(email)) {
+          //Close modal and display success message
+          successMsg.classList.remove("hide");
+          break;
+        } else {
+          //Close modal and display error message
+          errorMsg.classList.remove("hide")
+          break;
+        }
+  }
+}
+
 //Wait for page to load
 window.addEventListener('load', function() {
   //Event listener for signup form arrow icon
@@ -182,4 +215,7 @@ window.addEventListener('load', function() {
   document.getElementById("form-signup-button").addEventListener("click", signup);
   //Event listener for more confetti button
   document.getElementsByClassName("more-confetti")[0].addEventListener("click", playConfetti);
+  //Event listener for forgot password button
+  document.getElementsByClassName("forgot-password")[0].addEventListener("click", forgotPassword);
+
 });

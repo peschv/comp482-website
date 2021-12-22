@@ -143,6 +143,7 @@ h2 {
   max-width: 20px;
   height: auto;
   margin-bottom: 20px;
+  transform: rotate(90deg);
   cursor: pointer;
 }
 /* Text prompting users to click the arrow that reveals the signup form */

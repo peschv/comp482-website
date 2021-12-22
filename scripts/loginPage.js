@@ -22,22 +22,22 @@ function showForm() {
  * to try again.
 */
 function login() {
-  var input = document.getElementsByClassName("user-email")[0].value;
+  var email = document.getElementsByClassName("user-email")[0].value;
   var pswd = document.getElementById("password1");
-  var emailError = document.getElementsByClassName("email-error")[0];
-  var pswdError = document.getElementsByClassName("password1-error")[0];
-  var loginError = document.getElementsByClassName("login-error")[0];
+  var emailError = document.getElementsByClassName("email-error")[0]; //Email error
+  var pswdError = document.getElementsByClassName("password1-error")[0]; //Password error for length
+  var loginError = document.getElementsByClassName("login-error")[0]; //General login error
 
   //Reset error messages
   emailError.classList.add("hide");
   pswdError.classList.add("hide");
   loginError.classList.add("hide");
 
-  if (!validateEmail(input)) { //Email is invalid
+  if (!validateEmail(email)) { //Email is invalid
     emailError.classList.remove("hide");
   } else if (!passwordLength(pswd)) { //Password is less than 8 characters
     pswdError.classList.remove("hide");
-  } else if (validateEmail(input) && passwordLength(pswd)) { //Both password and email are valid
+  } else if (validateEmail(email) && passwordLength(pswd)) { //Both password and email are valid
     localStorage.setItem('logged-in', 'true');
     displayLogout();
     window.location.replace("my-account.html");

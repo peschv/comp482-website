@@ -177,7 +177,8 @@ function loadTableData() {
  * is called by submitForm() when user presses "search".
  * The parameter is an object containing two values of property city and date.
  * For example, if user selects city: Miramichi, date: 2018, the parameter
- * value is (Miramichi,2018).
+ * value is (Miramichi,2018). User also has option to select All Dates, which
+ * show all entries for a given city irrespective of date.
  * This function searches the city and date columns of the table to obtain the
  * cells with values matching the parameter values. It then displays these rows,
  * and hides all other rows that do not match the parameter values.
@@ -194,23 +195,39 @@ function showHide(obj) {
 
   //Loop through all rows
   for (var i=0; i<rows.length;i++){
-    //Get year from the date
-    var dYear = d[i].textContent.split('-')[0];
 
-    /*
-     * If it's the same city and same date as selected by user, show entry.
-     * Also if city value contains a dash, replace this dash with a blank space.
-    */
-    if (c[i].textContent.toUpperCase() == city.replace(/-/g, ' ').toUpperCase() && dYear == date) {
-      rows[i].classList.remove("hide");
-    //If user did not select a city, show all entries that match date irrespective of city
-    } else if((city.split(',')[0] === "default") && dYear == date) {
-      rows[i].classList.remove("hide");
-    //If it's not the same city and date, hide entry
-    } else {
-      rows[i].classList.add("hide");
-      rowsHidden++;
-    }
+    switch(date) {
+        case "all-dates":  //If all dates selected
+            /*
+             * If it's the same city as selected by user, show entry. Also if city value
+             * contains a dash, replace this dash with a blank space.
+             */
+            if (c[i].textContent.toUpperCase() == city.replace(/-/g, ' ').toUpperCase()) {
+              rows[i].classList.remove("hide");
+            } else { //Else hide row and increment rowsHidden counter
+              rows[i].classList.add("hide");
+              rowsHidden++;
+            }
+            break;
+        default: //Else if specific date year selected
+            //Get year from the date cell in the table
+            var dYear = d[i].textContent.split('-')[0];
+            /*
+             * If it's the same city and same date as selected by user, show entry.
+             * Also if city value contains a dash, replace this dash with a blank space.
+            */
+            if (c[i].textContent.toUpperCase() == city.replace(/-/g, ' ').toUpperCase() && dYear == date) {
+              rows[i].classList.remove("hide");
+            //If user did not select a city, show all entries that match date irrespective of city
+            } else if((city.split(',')[0] === "default") && dYear == date) {
+              rows[i].classList.remove("hide");
+            //If it's not the same city and date, hide entry
+            } else {
+              rows[i].classList.add("hide");
+              rowsHidden++;
+            }
+            break;
+        }
   }
   //If table is empty, i.e. all rows are hidden, display text that no matching entries found
   if (rows.length == rowsHidden){
@@ -246,7 +263,8 @@ function displayCheckboxes(){
     } else {
       ch[i].classList.add("show");
       //Workaround to set height of checkbox cells to same height as rest of table columns
-      ch[i].style.height = document.getElementsByClassName("table-address")[i].offsetHeight+"px";
+      var number = parseFloat(document.getElementsByClassName("table-address")[i].offsetHeight)+8;
+      ch[i].style.height = number+"px";
     }
   }
   //Loop through all table buttons at bottom of table
@@ -416,11 +434,15 @@ window.addEventListener('load', function() {
    //Event listener for print button
    document.getElementById("print-container").addEventListener("click",printTable);
 
-   //Call the tablesorter plugin and apply the ice theme
+   /*
+    * Call the tablesorter plugin. Apply the ice theme, zebra striping widget
+    * to make rows alternating colors, and scroller widget to enable horizontal
+    * and vertical scroll bars within the table.
+    */
    $(function() {
      $("table").tablesorter({
          theme : 'ice',
-         widgets : ['zebra']
+         widgets : ['zebra','scroller']
        });
    });
 });

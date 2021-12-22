@@ -359,6 +359,10 @@ tbody tr:nth-child(even){
 .tablesorter-ice thead td {
  font:16px/18px Arial,Sans-serif !important;
 }
+/* Header table row */
+.tablesorter-ice th {
+  min-height: 65px;
+}
 /* Dropdown list selection in Add Selected modal */
 #list-selector {
   font-size: 16px;
@@ -376,10 +380,7 @@ tbody tr:nth-child(even){
     font-size: 20px;
   }
 }
-/* If screen size is less than 750px wide */
-@media only screen and (max-width: 750px) {
-  /* Container for table element */
-  .results-container {
-    margin: 0px;
-  }
+/* Tablesorter plugin: match the margins set to the table to keep the border the same height as the table */
+.using-ice-theme .tablesorter-scroller-fixed:after  {
+  margin: 0;
 }

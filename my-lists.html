@@ -10,16 +10,17 @@
 
   <body>
     <div class="header">
+      <!--Container for navigation menu and login button-->
       <div class="header-left">
         <div class="header-buttons">
           <!--Redirects to login page -->
           <a class="login-button login-false" id="login-text" href="login.html"></a>
           <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
         </div>
-        <!--Collapsible main menu-->
+        <!--Collapsible menu-->
         <div class="menu">
           <ul id="ham-list">
-            <!--X button closes side menu-->
+            <!--X button closes menu-->
             <li><a class="menu-unselected" id="close">X</a></li>
             <!--Redirects to home page-->
             <li><a class="menu-unselected" href="home.html">Home</a></li>
@@ -38,6 +39,7 @@
           </ul>
         </div>
       </div>
+      <!--Site title-->
       <div class="header-right">
         <!--Redirects to home page -->
         <a class="site-title" href="home.html">NB REALty Prices</a>
@@ -50,6 +52,7 @@
       <div class="subtitle">
         <h2>My Lists</h2>
       </div>
+      <!--List of instructions-->
       <div class="instructions">
         <p id="instructions-title">How to use this page:</p>
         <ul id="instructions-list">
@@ -59,15 +62,18 @@
           <li><span>Manage Lists:</span> allows you to share, rename, print and delete your lists.</li>
         </ul>
       </div>
+      <!--Navigation bar for My Lists-->
       <div class="my-lists-menu">
         <a href="search-listings.html">Add Items to Lists</a>
         <a id="menu-new-list">Create New List</a>
         <a id="menu-customize-view">Customize View</a>
         <a id="menu-manage-lists">Manage Lists</a>
       </div>
+      <!--Customize View modal-->
       <div class="modal hide" id="modal-customize-view">
         <div class="modal-content">
           <h3>Select which columns to display:</h3>
+            <!--Checkboxes that determine which table columns are displayed-->
             <ul id="checkbox-list">
               <li><input type="checkbox" class="columns-checkbox" value="1" checked/>Address</li>
               <li><input type="checkbox" class="columns-checkbox" value="2" checked/>City</li>
@@ -78,216 +84,237 @@
               <li><input type="checkbox" class="columns-checkbox" value="7" checked/>Difference (as %)</li>
               <li><input type="checkbox" class="columns-checkbox" value="8" checked/>Status</li>
             </ul>
-            <p class="error-message hide">You must select at least one checkbox.</p>
-            <button class="modal-content-button" id="customize-view-button">Okay</button>
+          <!--Error message when no checkboxes are selected-->
+          <p class="error-message hide">You must select at least one checkbox.</p>
+          <!--Close Customize View modal-->
+          <button class="modal-content-button" id="customize-view-button">Okay</button>
+        </div>
+      </div>
+      <!--Manage Lists modal-->
+      <div class="modal hide" id="modal-manage-lists">
+        <div class="modal-content">
+          <div class="modal-content-lists">
+            <!--First list element with options to share, print, rename or delete list-->
+            <ul class="manage-list" id="manage-list1">
+              <li class="manage-list-name">My List 1</li>
+              <li><a class="manage-list-actions share-list" id="share-list1">Share List</a></li>
+              <li><a class="manage-list-actions print-list" id="print-list1">Print List</a></li>
+              <li><a class="manage-list-actions rename-list" id="rename-list1">Rename List</a></li>
+              <li><a class="manage-list-actions delete-list" id="delete-list1">Delete List</a></li>
+            </ul>
+            <!--Second list element with options to share, print, rename or delete list-->
+            <ul class="manage-list" id="manage-list2">
+              <li class="manage-list-name">My List 2</li>
+              <li><a class="manage-list-actions share-list" id="share-list2">Share List</a></li>
+              <li><a class="manage-list-actions print-list" id="print-list2">Print List</a></li>
+              <li><a class="manage-list-actions rename-list" id="rename-list2">Rename List</a></li>
+              <li><a class="manage-list-actions delete-list" id="delete-list2">Delete List</a></li>
+            </ul>
+          </div>
+          <!--Error message when account has no lists-->
+          <div class="no-lists hide">
+            <p>There are no lists to display.</p>
+          </div>
+          <!--Close Manage Lists modal-->
+          <button class="modal-content-button" id="manage-list-button">Close</button>
+        </div>
+      </div>
+      <!--Share List modal, displayed when 'Share List' is selected in Manage Lists modal-->
+      <div class="modal hide" id="modal-share-lists">
+        <div class="modal-content">
+          <p>Share My List:</p>
+          <!--URL to be copied-->
+          <p class="url-name"></p>
+          <!--Close Share List modal, return to Manage Lists modal-->
+          <button class="modal-button" id="modal-cancel-button">Cancel</button>
+          <!--Copy URL to clipboard and close modal, return to Manage Lists modal-->
+          <button class="modal-button" id="modal-copy-button">Copy</button>
+          <p class="success hide">Copied successfully</p>
+        </div>
+      </div>
+    </div>
+    <!--Container for user's lists-->
+    <div class="list-container" id="all-lists">
+      <!--First list-->
+      <div class="list-element" id="list1">
+        <!--First list heading-->
+        <div class="list-heading-container">
+          <h3 class="list-heading" id="list1-heading-name">My List 1</h3>
+          <div class="list-buttons" id="list1-buttons">
+            <a class="show-text" id="show-list1-text">Show List</a>
+            <img id="show-list1-button" class="icon show-button" src="./images/right-arrow.png" alt="Show"/>
           </div>
         </div>
-        <div class="modal hide" id="modal-manage-lists">
-          <div class="modal-content">
-            <div class="modal-content-lists">
-              <ul class="manage-list" id="manage-list1">
-                <li class="manage-list-name">My List 1</li>
-                <li><a class="manage-list-actions share-list" id="share-list1">Share List</a></li>
-                <li><a class="manage-list-actions print-list" id="print-list1">Print List</a></li>
-                <li><a class="manage-list-actions rename-list" id="rename-list1">Rename List</a></li>
-                <li><a class="manage-list-actions delete-list" id="delete-list1">Delete List</a></li>
-              </ul>
-              <ul class="manage-list" id="manage-list2">
-                <li class="manage-list-name">My List 2</li>
-                <li><a class="manage-list-actions share-list" id="share-list2">Share List</a></li>
-                <li><a class="manage-list-actions print-list" id="print-list2">Print List</a></li>
-                <li><a class="manage-list-actions rename-list" id="rename-list2">Rename List</a></li>
-                <li><a class="manage-list-actions delete-list" id="delete-list2">Delete List</a></li>
-              </ul>
-            </div>
-            <div class="no-lists hide">
-              <p>There are no lists to display.</p>
-            </div>
-            <button class="modal-content-button" id="manage-list-button">Close</button>
-          </div>
-        </div>
-        <div class="modal hide" id="modal-share-lists">
-          <div class="modal-content">
-            <p>Share My List:</p>
-            <p class="url-name"></p>
-            <button class="modal-button" id="modal-cancel-button">Cancel</button>
-            <button class="modal-button" id="modal-copy-button">Copy</button>
-            <p class="success hide">Copied successfully</p>
+        <!--First list table content-->
+        <div class="list-content hide" id="list1-content">
+          <table id="table1">
+            <thead>
+              <tr>
+                <th class="table-checkbox"></th>
+                <th class="columns table-address">Address</th>
+                <th class="columns table-city">City</th>
+                <th class="columns table-date">Date Sold</th>
+                <th class="columns table-listing">Listing Price ($)</th>
+                <th class="columns table-sold">Sold Price ($)</th>
+                <th class="columns table-diff-dollar">Difference (as $)</th>
+                <th class="columns table-diff-percent">Difference (as %)</th>
+                <th class="columns table-status">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-entry entry1">
+                <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">133 Water St</td>
+                <td class="table-data table-city">Miramichi</td>
+                <td class="table-data table-date">12/03/2021</td>
+                <td class="table-data table-listing">130,000</td>
+                <td class="table-data table-sold">150,000</td>
+                <td class="table-data table-diff-dollar">20,000</td>
+                <td class="table-data table-diff-percent">14.29%</td>
+                <td class="table-data table-status">Over-Asking</td>
+              </tr>
+              <tr class="table-entry entry2">
+                <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">68 Johnson Ave</td>
+                <td class="table-data table-city">Miramichi</td>
+                <td class="table-data table-date">06/11/2020</td>
+                <td class="table-data table-listing">150,000</td>
+                <td class="table-data table-sold">130,000</td>
+                <td class="table-data table-diff-dollar">20,000</td>
+                <td class="table-data table-diff-percent">14.29%</td>
+                <td class="table-data table-status">Under-Asking</td>
+              </tr>
+              <tr class="table-entry entry3">
+                <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">1972 Main St</td>
+                <td class="table-data table-city">Miramichi</td>
+                <td class="table-data table-date">09/08/2020</td>
+                <td class="table-data table-listing">150,000</td>
+                <td class="table-data table-sold">130,000</td>
+                <td class="table-data table-diff-dollar">20,000</td>
+                <td class="table-data table-diff-percent">14.29%</td>
+                <td class="table-data table-status">Under-Asking</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--First list table buttons-->
+          <div class="table-button-container">
+            <button class="table-button deselect-all" id="list1-deselect-all">Deselect All</button>
+            <button class="table-button delete-items" id="list1-delete">Delete Selected Items</button>
           </div>
         </div>
       </div>
-      <div class="list-container" id="all-lists">
-        <div class="list-element" id="list1">
-          <div class="list-heading-container">
-            <h3 class="list-heading" id="list1-heading-name">My List 1</h3>
-            <div class="list-buttons" id="list1-buttons">
-              <a class="show-text" id="show-list1-text">Show List</a>
-              <img id="show-list1-button" class="icon show-button" src="./images/right-arrow.png" alt="Show"/>
-            </div>
-          </div>
-          <!--Source code: https://stackoverflow.com/q/59032675-->
-          <div class="list-content hide" id="list1-content">
-            <table id="table1">
-              <thead>
-                <tr>
-                  <th class="table-checkbox"></th>
-                  <th class="columns table-address">Address</th>
-                  <th class="columns table-city">City</th>
-                  <th class="columns table-date">Date Sold</th>
-                  <th class="columns table-listing">Listing Price ($)</th>
-                  <th class="columns table-sold">Sold Price ($)</th>
-                  <th class="columns table-diff-dollar">Difference (as $)</th>
-                  <th class="columns table-diff-percent">Difference (as %)</th>
-                  <th class="columns table-status">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-entry entry1">
-                  <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">133 Water St</td>
-                  <td class="table-data table-city">Miramichi</td>
-                  <td class="table-data table-date">12/03/2021</td>
-                  <td class="table-data table-listing">130,000</td>
-                  <td class="table-data table-sold">150,000</td>
-                  <td class="table-data table-diff-dollar">20,000</td>
-                  <td class="table-data table-diff-percent">14.29%</td>
-                  <td class="table-data table-status">Over-Asking</td>
-                </tr>
-                <tr class="table-entry entry2">
-                  <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">68 Johnson Ave</td>
-                  <td class="table-data table-city">Miramichi</td>
-                  <td class="table-data table-date">06/11/2020</td>
-                  <td class="table-data table-listing">150,000</td>
-                  <td class="table-data table-sold">130,000</td>
-                  <td class="table-data table-diff-dollar">20,000</td>
-                  <td class="table-data table-diff-percent">14.29%</td>
-                  <td class="table-data table-status">Under-Asking</td>
-                </tr>
-                <tr class="table-entry entry3">
-                  <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">1972 Main St</td>
-                  <td class="table-data table-city">Miramichi</td>
-                  <td class="table-data table-date">09/08/2020</td>
-                  <td class="table-data table-listing">150,000</td>
-                  <td class="table-data table-sold">130,000</td>
-                  <td class="table-data table-diff-dollar">20,000</td>
-                  <td class="table-data table-diff-percent">14.29%</td>
-                  <td class="table-data table-status">Under-Asking</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="table-button-container">
-              <button class="table-button deselect-all" id="list1-deselect-all">Deselect All</button>
-              <button class="table-button delete-items" id="list1-delete">Delete Selected Items</button>
-            </div>
+      <!--Second list-->
+      <div class="list-element" id="list2">
+        <!--Second list heading-->
+        <div class="list-heading-container">
+          <h3 class="list-heading" id="list2-heading-name">My List 2</h3>
+          <div class="list-buttons" id="list2-buttons">
+            <a class="show-text" id="show-list2-text">Show List</a>
+            <img class="icon show-button" id="show-list2-button" src="./images/right-arrow.png" alt="Show"/>
           </div>
         </div>
-        <div class="list-element" id="list2">
-          <div class="list-heading-container">
-            <h3 class="list-heading" id="list2-heading-name">My List 2</h3>
-            <div class="list-buttons" id="list2-buttons">
-              <a class="show-text" id="show-list2-text">Show List</a>
-              <img class="icon show-button" id="show-list2-button" src="./images/right-arrow.png" alt="Show"/>
-            </div>
-          </div>
-          <div class="list-content hide" id="list2-content">
-            <table id="table2">
-              <thead>
-                <tr>
-                  <th class="columns table-checkbox"></th>
-                  <th class="columns table-address">Address</th>
-                  <th class="columns table-city">City</th>
-                  <th class="columns table-date">Date Sold</th>
-                  <th class="columns table-listing">Listing Price ($)</th>
-                  <th class="columns table-sold">Sold Price ($)</th>
-                  <th class="columns table-diff-dollar">Difference (as $)</th>
-                  <th class="columns table-diff-percent">Difference (as %)</th>
-                  <th class="columns table-status">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-entry entry1">
-                  <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">63 Waterview Ave</td>
-                  <td class="table-data table-city">Bathurst</td>
-                  <td class="table-data table-date">29/04/2021</td>
-                  <td class="table-data table-listing">330,000</td>
-                  <td class="table-data table-sold">330,000</td>
-                  <td class="table-data table-diff-dollar">0</td>
-                  <td class="table-data table-diff-percent">0%</td>
-                  <td class="table-data table-status">At-Asking</td>
-                </tr>
-                <tr class="table-entry entry2">
-                  <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">1823 Pleasant St</td>
-                  <td class="table-data table-city">Fredericton</td>
-                  <td class="table-data table-date">01/12/2020</td>
-                  <td class="table-data table-listing">140,000</td>
-                  <td class="table-data table-sold">160,000</td>
-                  <td class="table-data table-diff-dollar">20,000</td>
-                  <td class="table-data table-diff-percent">13.3%</td>
-                  <td class="table-data table-status">Over-Asking</td>
-                </tr>
-                <tr class="table-entry entry3">
-                  <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">4 Walnut Cres</td>
-                  <td class="table-data table-city">Fredericton</td>
-                  <td class="table-data table-date">19/03/2019</td>
-                  <td class="table-data table-listing">450,000</td>
-                  <td class="table-data table-sold">400,000</td>
-                  <td class="table-data table-diff-dollar">50,000</td>
-                  <td class="table-data table-diff-percent">11.8%</td>
-                  <td class="table-data table-status">Under-Asking</td>
-                </tr>
-                <tr class="table-entry entry4">
-                  <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">923 Queen St</td>
-                  <td class="table-data table-city">Bathurst</td>
-                  <td class="table-data table-date">26/03/2020</td>
-                  <td class="table-data table-listing">300,000</td>
-                  <td class="table-data table-sold">230,000</td>
-                  <td class="table-data table-diff-dollar">70,000</td>
-                  <td class="table-data table-diff-percent">26.4%</td>
-                  <td class="table-data table-status">Under-Asking</td>
-                </tr>
-                <tr class="table-entry entry5">
-                  <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
-                  <td class="table-data table-address">50 Duke St</td>
-                  <td class="table-data table-city">Fredericton</td>
-                  <td class="table-data table-date">30/10/2020</td>
-                  <td class="table-data table-listing">210,000</td>
-                  <td class="table-data table-sold">270,000</td>
-                  <td class="table-data table-diff-dollar">60,000</td>
-                  <td class="table-data table-diff-percent">25%</td>
-                  <td class="table-data table-status">Over-Asking</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="table-button-container">
-              <button class="table-button deselect-all" id="list2-deselect-all">Deselect All</button>
-              <button class="table-button delete-items" id="list2-delete">Delete Selected Items</button>
-            </div>
+        <!--Second list table contents-->
+        <div class="list-content hide" id="list2-content">
+          <table id="table2">
+            <thead>
+              <tr>
+                <th class="columns table-checkbox"></th>
+                <th class="columns table-address">Address</th>
+                <th class="columns table-city">City</th>
+                <th class="columns table-date">Date Sold</th>
+                <th class="columns table-listing">Listing Price ($)</th>
+                <th class="columns table-sold">Sold Price ($)</th>
+                <th class="columns table-diff-dollar">Difference (as $)</th>
+                <th class="columns table-diff-percent">Difference (as %)</th>
+                <th class="columns table-status">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-entry entry1">
+                <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">63 Waterview Ave</td>
+                <td class="table-data table-city">Bathurst</td>
+                <td class="table-data table-date">29/04/2021</td>
+                <td class="table-data table-listing">330,000</td>
+                <td class="table-data table-sold">330,000</td>
+                <td class="table-data table-diff-dollar">0</td>
+                <td class="table-data table-diff-percent">0%</td>
+                <td class="table-data table-status">At-Asking</td>
+              </tr>
+              <tr class="table-entry entry2">
+                <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">1823 Pleasant St</td>
+                <td class="table-data table-city">Fredericton</td>
+                <td class="table-data table-date">01/12/2020</td>
+                <td class="table-data table-listing">140,000</td>
+                <td class="table-data table-sold">160,000</td>
+                <td class="table-data table-diff-dollar">20,000</td>
+                <td class="table-data table-diff-percent">13.3%</td>
+                <td class="table-data table-status">Over-Asking</td>
+              </tr>
+              <tr class="table-entry entry3">
+                <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">4 Walnut Cres</td>
+                <td class="table-data table-city">Fredericton</td>
+                <td class="table-data table-date">19/03/2019</td>
+                <td class="table-data table-listing">450,000</td>
+                <td class="table-data table-sold">400,000</td>
+                <td class="table-data table-diff-dollar">50,000</td>
+                <td class="table-data table-diff-percent">11.8%</td>
+                <td class="table-data table-status">Under-Asking</td>
+              </tr>
+              <tr class="table-entry entry4">
+                <td class="table-input"><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">923 Queen St</td>
+                <td class="table-data table-city">Bathurst</td>
+                <td class="table-data table-date">26/03/2020</td>
+                <td class="table-data table-listing">300,000</td>
+                <td class="table-data table-sold">230,000</td>
+                <td class="table-data table-diff-dollar">70,000</td>
+                <td class="table-data table-diff-percent">26.4%</td>
+                <td class="table-data table-status">Under-Asking</td>
+              </tr>
+              <tr class="table-entry entry5">
+                <td><input type="checkbox" class="checkbox" value="1" name="row[1][]"/></td>
+                <td class="table-data table-address">50 Duke St</td>
+                <td class="table-data table-city">Fredericton</td>
+                <td class="table-data table-date">30/10/2020</td>
+                <td class="table-data table-listing">210,000</td>
+                <td class="table-data table-sold">270,000</td>
+                <td class="table-data table-diff-dollar">60,000</td>
+                <td class="table-data table-diff-percent">25%</td>
+                <td class="table-data table-status">Over-Asking</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--Second list table buttons-->
+          <div class="table-button-container">
+            <button class="table-button deselect-all" id="list2-deselect-all">Deselect All</button>
+            <button class="table-button delete-items" id="list2-delete">Delete Selected Items</button>
           </div>
         </div>
-        <div class="no-lists hide">
-          <p>There are no lists to display.</p>
-        </div>
       </div>
-      <div class="image-source">
-        <p>Arrow icon created by
-          <a href="https://www.iconfinder.com/icons/3994400/arrow_forward_navigation_next_right_icon">
-          Deemak Daksina</a></p>
+      <!--Error message when there are no lists-->
+      <div class="no-lists hide">
+        <p>There are no lists to display.</p>
       </div>
-      <div class="footer">
-        <a>NB REALty Prices</a>
-        <a>©2021</a>
-      </div>
-      <script type="text/javascript" src="./scripts/jquery.js"></script>
-      <script type="text/javascript" src="./scripts/openMenu.js"></script>
-      <script type="text/javascript" src="./scripts/loginStatus.js"></script>
-      <script type="text/javascript" src="./scripts/myLists.js"></script>
-      <script type="text/javascript" src="./scripts/myListsCustomize.js"></script>
-      <script type="text/javascript" src="./scripts/myListsManage.js"></script>
-    </body>
+    </div>
+    <!--Source of arrow icon used in each list's heading element-->
+    <div class="image-source">
+      <p>Arrow icon created by
+        <a href="https://www.iconfinder.com/icons/3994400/arrow_forward_navigation_next_right_icon">
+        Deemak Daksina</a></p>
+    </div>
+    <div class="footer">
+      <a>NB REALty Prices</a>
+      <a>©2021</a>
+    </div>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/openMenu.js"></script>
+    <script type="text/javascript" src="./scripts/loginStatus.js"></script>
+    <script type="text/javascript" src="./scripts/myLists.js"></script>
+    <script type="text/javascript" src="./scripts/myListsCustomize.js"></script>
+    <script type="text/javascript" src="./scripts/myListsManage.js"></script>
+  </body>
 </html>

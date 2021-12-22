@@ -11,6 +11,7 @@
 
   <body>
     <div class="header">
+      <!--Container for navigation menu and login button-->
       <div class="header-left">
         <div class="header-buttons">
           <!--Redirects to login page -->
@@ -18,10 +19,10 @@
           <img class="animate__animated animate__swing" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
           <a class="animate__animated hide" id="click-menu">￪ Click for menu</a>
         </div>
-        <!--Collapsible main menu-->
+        <!--Collapsible menu-->
         <div class="menu">
           <ul id="ham-list">
-            <!--X button closes side menu-->
+            <!--X button closes menu-->
             <li><a class="menu-unselected" id="close">X</a></li>
             <!--Redirects to home page-->
             <li><a class="menu-selected" href="home.html">Home</a></li>
@@ -46,28 +47,33 @@
       <div class="site-title">
         <h1>NB REALty Prices</h1>
       </div>
+      <!--Brief tagline describing the website-->
       <div class="site-description">
         <p>Up-to-date realty market pricing trends in New Brunswick, Canada.</p>
       </div>
     </div>
-
+    <!--Site content-->
     <div class="site-content">
+      <!--Image element-->
       <div class="image-container">
         <img id="home-image" src="./images/blue-house-nb.jpg"
           alt="Image of 1.5 story turquoise house with red door and a Canadian flag
           hanging above the entrance"/>
         <a id="image-source" href="https://www.flickr.com/photos/22711505@N05/24102952108/in/photostream/lightbox/">Image by Ron Cogswell</a>
       </div>
+      <!--Newsletter signup element-->
       <div class="newsletter-container">
         <div class="signup">
           <p id="newsletter-statement">Want regular updates? Sign up for our monthly email newsletter:</p>
           <p class="hide" id="error-message">Error: Please enter a valid email address.</p>
+          <!--Form to submit email for newsletter signup-->
           <form id="newsletter-email">
             <label class="form-element" for="email">Email:</label><br>
             <input class="form-element" type="text" id="email-input" name="email" placeholder="email@domain.com"><br>
             <button class="form-element" type="button" id="submit-button">Submit</button>
           </form>
         </div>
+        <!--Success message for newsletter submission-->
         <div class="hide success-message">
           <p>Thank you for subscribing!</p>
           <p>Please check your email inbox to confirm your subscription.</p>

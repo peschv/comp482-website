@@ -12,16 +12,17 @@
 
   <body>
     <div class="header">
+      <!--Container for navigation menu and login button-->
       <div class="header-left">
         <div class="header-buttons">
           <!--Redirects to login page -->
           <a class="login-button login-false" id="login-text" href="login.html"></a>
           <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
         </div>
-        <!--Collapsible main menu-->
+        <!--Collapsible menu-->
         <div class="menu">
           <ul id="ham-list">
-            <!--X button closes side menu-->
+            <!--X button closes menu-->
             <li><a class="menu-unselected" id="close">X</a></li>
             <!--Redirects to home page-->
             <li><a class="menu-unselected" href="home.html">Home</a></li>
@@ -54,7 +55,9 @@
       <div class="subtitle">
         <h2>Search Listings</h2>
       </div>
+      <!--Search options container-->
       <div class="selection-container">
+        <!--List of instructions-->
         <div class="instructions">
           <p id="instructions-title">How to use this page:</p>
           <ul id="instructions-list">
@@ -67,8 +70,11 @@
             <li>Select print button to print your search results.</li>
           </ul>
         </div>
-        <!--Source code: https://stackoverflow.com/a/24849497-->
+        <!--User selection options. Utilized the following source code:
+            Author:  rybo111
+            Code: https://stackoverflow.com/a/24849497-->
         <form>
+          <!--City selection dropdown-->
           <div class="selection-dropdown" id="city-selection-container">
             <p>Select a city:</p>
             <select class="toggle-city" id="city-dropdown">
@@ -80,6 +86,7 @@
               <option value="saint-john" data-show=".saint-john">Saint John</option>
             </select>
           </div>
+          <!--Date selection dropdown-->
           <div class="selection-dropdown" id="date-selection-container">
             <p>Select date:</p>
             <select class="toggle-date" id="date-dropdown">
@@ -89,6 +96,7 @@
               <option value="2021" data-show=".2021">2021</option>
             </select>
           </div>
+          <!--Checkboxes allowing user to decide which table columns to display-->
           <div class="selection" id="column-selector">
             <p>Select which columns to display:</p>
             <ul id="checkbox-list">
@@ -101,17 +109,21 @@
               <li><input type="checkbox" class="columns-checkbox" value="7" checked/>Difference (as %)</li>
               <li><input type="checkbox" class="columns-checkbox" value="8" checked/>Status</li>
             </ul>
+            <!--Error message when no checkboxes are selected-->
             <p class="hide error" id="error-message">Select at least one</p>
           </div>
+          <!--Search button-->
           <div class="search-button-container">
             <button id="search-button">Search</button>
           </div>
         </form>
+        <!--Print button-->
         <div class="print" id="print-container">
           <img class="icon" id="print-icon" src="./images/print-icon.png" alt="Print"/>
           <a class="print-text">Print</a>
         </div>
       </div>
+      <!--Table containing search results-->
       <div class="results-container">
         <table id="search-table">
           <thead>
@@ -132,11 +144,13 @@
           </tbody>
         </table>
       </div>
+      <!--Table buttons-->
       <div class="table-buttons-container">
         <button class="table-button" id="add-selected">Add Selected Items</button>
         <button class="table-button" id="select-all">Select All</button>
         <button class="table-button" id="deselect-all">Deselect All</button>
       </div>
+      <!--Add Selected Items modal allowing user to choose a list-->
       <div class="modal hide">
         <div class="modal-content">
           <div class="dropdown" id="modal-lists">
@@ -148,6 +162,7 @@
               <option class="add-new-list" value="newlist" data-show=".newlist">Add New List...</option>
             </select>
           </div>
+          <!--Buttons to close modal-->
           <div class="modal-buttons-container">
             <button class="modal-button" id="modal-cancel-button">Cancel</button>
             <button class="modal-button" id="modal-add-button">Add</button>
@@ -159,7 +174,6 @@
       <a>NB REALty Prices</a>
       <a>©2021</a>
     </div>
-    <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/openMenu.js"></script>
     <script type="text/javascript" src="./scripts/loginStatus.js"></script>
     <script type="text/javascript" src="./scripts/searchListings.js"></script>

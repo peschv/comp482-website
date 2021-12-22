@@ -1,10 +1,13 @@
 /*
 * Javascript for deleting account, and editing email and name on my-account.html.
-*
+* For account deletion, display two confirm boxes to ensure user intended to
+* delete account. If user deletes account, set localStorage value to false, hide the
+* my-account.html and my-lists.html pages from navigation menu, and automatically
+* redirect user to the homepage.
+* If user attempts to edit name or email, only change the value of these elements
+* if the email is in a valid email format per validateEmail() and if the fields
+* were not left blank.
 */
-
-// Variable for login/signup button, used by closeAccount() function
-var div = document.getElementsByClassName("login-button")[0];
 
 /*
  * Allow user to edit name by displaying prompt window with input field. If
@@ -98,11 +101,9 @@ function deleteAccount() {
  * Remove user account, then log user out of account and redirect user to
  * the home page. Replace "signout" text with "login/signup", remove visibility
  * of my-account-html and my-lists.html from the navigation menu, and set
- * localStorage property to login-false.
+ * value of localStorage property to false.
 */
 function closeAccount() {
-  div.removeClass('login-true');
-  div.addClass('login-false');
   localStorage.setItem('logged-in', 'false');
   document.getElementById("login-text").innerHTML = "Login/Signup";
   document.getElementById('my-account').style.display = "none";

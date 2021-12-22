@@ -12,16 +12,17 @@
 
   <body>
     <div class="header">
+      <!--Container for navigation menu and login button-->
       <div class="header-left">
         <div class="header-buttons">
           <!--Redirects to login page -->
           <a class="login-button login-false" id="login-text" href="login.html"></a>
           <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
         </div>
-        <!--Collapsible main menu-->
+        <!--Collapsible menu-->
         <div class="menu">
           <ul id="ham-list">
-            <!--X button closes side menu-->
+            <!--X button closes menu-->
             <li><a class="menu-unselected" id="close">X</a></li>
             <!--Redirects to home page-->
             <li><a class="menu-unselected" href="home.html">Home</a></li>
@@ -54,6 +55,7 @@
       <div class="subtitle">
         <h2>Statistics</h2>
       </div>
+      <!--Overview section containing charts-->
       <div class="overview-container">
         <h3>Overview</h3>
         <div class="overview-images-container">
@@ -63,8 +65,10 @@
            alt="Chart displaying statistics"/>
         </div>
       </div>
+      <!--Month-By-Month Changes section containing table-->
       <div class="month-changes-container">
         <h3>View Month-By-Month Changes</h3>
+        <!--List of instructions-->
         <div class="instructions">
           <p id="instructions-title">How to use this table:</p>
           <ul id="instructions-list">
@@ -76,6 +80,9 @@
             </ul>
           </ul>
         </div>
+        <!--Dropdown city selection element. Obtained from source code:
+          Author: rybo111
+          Code: https://stackoverflow.com/a/24849497-->
         <form>
           <div class="selection dropdown">
             <p>Select a city:</p>
@@ -88,6 +95,7 @@
             </select>
           </div>
         </form>
+        <!--Table element displaying results of city dropdown selection-->
         <div class="results-container">
           <table id="search-table">
             <thead>
@@ -110,7 +118,6 @@
       <a>NB REALty Prices</a>
       <a>©2021</a>
     </div>
-    <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/openMenu.js"></script>
     <script type="text/javascript" src="./scripts/loginStatus.js"></script>
     <script type="text/javascript" src="./scripts/statisticsTable.js"></script>

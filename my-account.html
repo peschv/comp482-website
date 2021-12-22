@@ -10,16 +10,17 @@
 
   <body>
     <div class="header">
+      <!--Container for navigation menu and login button-->
       <div class="header-left">
         <div class="header-buttons">
           <!--Redirects to login page -->
           <a class="login-button login-false" id="login-text" href="login.html"></a>
           <img class="icon" id="menu-icon" src="./images/menu-icon.png" alt="Menu"/>
         </div>
-        <!--Collapsible main menu-->
+        <!--Collapsible menu-->
         <div class="menu">
           <ul id="ham-list">
-            <!--X button closes side menu-->
+            <!--X button closes menu-->
             <li><a class="menu-unselected" id="close">X</a></li>
             <!--Redirects to home page-->
             <li><a class="menu-unselected" href="home.html">Home</a></li>
@@ -52,23 +53,27 @@
         <h2>My Account</h2>
       </div>
       <div class="account-container">
+        <!--Account name element-->
         <div class="name-container">
           <p class="name">Name:</p>
           <p class="name-data">Janice Boucher</p>
           <button class="edit-button" id="edit-name">Edit</button>
         </div>
+        <!--Error message for edit account name-->
         <div class="error-message hide">
           <p id="name-error">Error: Your account name cannot be blank.</p>
         </div>
+        <!--Account email element-->
         <div class="email-container">
           <p class="email">Email:</p>
           <p class="email-data">janice.boucher@gmail.com</p>
           <button class="edit-button" id="edit-email">Edit</button>
         </div>
+        <!--Error message for edit account email-->
         <div class="error-message hide">
           <p id="email-error">Error: You must enter a valid email address.</p>
         </div>
-
+        <!--Account disclaimers-->
         <div class="account-description">
           <p>
             Your data privacy is important to us. The only data we store is your email address,
@@ -82,9 +87,11 @@
             Any action you take due to information you find on this website is strictly at your own risk.
           </p>
         </div>
+        <!--Delete account button-->
         <div class="delete-account warning">
           <button id="delete-button">Delete Account</button>
         </div>
+        <!--Delete account warning message-->
         <div class="hide">
           <p id="delete-warning">Warning: this action will permanently delete your account and your data cannot be recovered.</p>
         </div>

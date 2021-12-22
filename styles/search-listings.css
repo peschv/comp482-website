@@ -384,3 +384,7 @@ tbody tr:nth-child(even){
 .using-ice-theme .tablesorter-scroller-fixed:after  {
   margin: 0;
 }
+/* Tablesorter table header and body */
+.tablesorter-scroller-table, .tablesorter-scroller-header {
+  max-width: 1144px !important;
+}

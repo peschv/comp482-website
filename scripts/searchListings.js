@@ -442,7 +442,10 @@ window.addEventListener('load', function() {
    $(function() {
      $("table").tablesorter({
          theme : 'ice',
-         widgets : ['zebra','scroller']
+         widgets : ['zebra','scroller'],
+         widgetOptions: {
+              scroller_barWidth : '1150px'
+         }
        });
    });
 });

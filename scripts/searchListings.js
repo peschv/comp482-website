@@ -445,7 +445,6 @@ window.addEventListener('load', function() {
          widgets : ['zebra','resizable'],
          widgetOptions: {
            resizable_addLastColumn : true,
-          resizable_widths : [ '110px', '90px', '110px', '90px', '90px', '90px', '90px', '90px' ]
             //  scroller_barWidth : '1150px'
          }
        });

@@ -359,9 +359,14 @@ tbody tr:nth-child(even){
 .tablesorter-ice thead td {
  font:16px/18px Arial,Sans-serif !important;
 }
-/* Header table row */
+/* Table columns */
 .tablesorter-ice th {
   min-height: 65px;
+  text-align: center;
+}
+/* Table rows */
+.tablesorter-ice td {
+  text-align: center;
 }
 /* Dropdown list selection in Add Selected modal */
 #list-selector {
@@ -387,4 +392,19 @@ tbody tr:nth-child(even){
 /* Tablesorter table header and body */
 .tablesorter-scroller-table, .tablesorter-scroller-header {
   max-width: 1144px !important;
+}
+/*
+ * Workaround to make table cells the same width. Obtained from source code:
+ * Author: Mottie
+ * Code: https://stackoverflow.com/a/34277113
+ */
+.table-city, .table-listing, .table-sold, .table-diff-dollar, .table-diff-percent, .table-status {
+  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
+}
+.table-address, .table-date {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
 }

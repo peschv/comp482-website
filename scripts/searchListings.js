@@ -442,9 +442,11 @@ window.addEventListener('load', function() {
    $(function() {
      $("table").tablesorter({
          theme : 'ice',
-         widgets : ['zebra','scroller'],
+         widgets : ['zebra','resizable'],
          widgetOptions: {
-              scroller_barWidth : '1150px'
+           resizable_addLastColumn : true,
+          resizable_widths : [ '110px', '90px', '110px', '90px', '90px', '90px', '90px', '90px' ]
+            //  scroller_barWidth : '1150px'
          }
        });
    });

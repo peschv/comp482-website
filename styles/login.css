@@ -152,10 +152,10 @@ h2 {
 }
 /* Grow the arrow when user hovers over it */
 #arrow-signup-form:grow {
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 #arrow-signup-form:hover {
-  transform: scale(1.5);
+  transform: rotate(90deg) scale(2);
 }
 /* Message that displays when error occurs with input box */
 .error-message {

@@ -136,6 +136,15 @@ function displayLogout() {
  * disabled for users that have set their devices to prefer reduced motion.
 */
 function playConfetti() {
+
+  /* Scroll top of page. Obtained from the following source code:
+   Author: braks
+   Code: https://stackoverflow.com/a/30009863
+  */
+   $('html, body').animate({
+    scrollTop: 0
+   }, 300);
+
   confetti({
     angle: randomInRange(55, 125),
     spread: randomInRange(50, 70),

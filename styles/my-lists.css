@@ -347,13 +347,6 @@ tbody input {
 .modal-content-button:hover {
   box-shadow: 1px 1px 1px 1px rgba(0, 188, 212, 0.2);
 }
-/* Icon arrow source */
-.image-source {
-  font-size: 14px;
-  color: rgb(102,109,109);
-  margin: 55px 0px 25px 0px;
-  text-align: center;
-}
 /* Styling for print function.
  * Hide all elements except site title, list name and table.
  */

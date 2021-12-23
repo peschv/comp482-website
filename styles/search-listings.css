@@ -109,6 +109,18 @@ body {
   font-size: 25px;
   line-height: 40px;
 }
+/* Container for 'Go back to My Lists' button */
+.go-back {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 80px;
+}
+/* Go back icon when user is logged in */
+#go-back-icon {
+  transform: rotate(180deg);
+  max-width: 40px;
+}
 /* Sub-title */
 h2 {
   color:rgb(80, 138, 120);
@@ -299,8 +311,6 @@ tbody tr:nth-child(even){
 .hide {
   display: none;
 }
-
-
 /* Modal styling obtained from the following source code:
  * Author: W3 Schools
  * Code: https://www.w3schools.com/howto/howto_css_modals.asp */
@@ -372,10 +382,6 @@ tbody tr:nth-child(even){
 #list-selector {
   font-size: 16px;
 }
-/* Go back icon when user is logged in */
-#go-back-icon {
-  transform: 180deg;
-}
 /* If screen size is less than 470px wide */
 @media only screen and (max-width: 470px) {
   /* Modal Content/Box */
@@ -398,17 +404,26 @@ tbody tr:nth-child(even){
   max-width: 1144px !important;
 }
 /*
- * Workaround to make table cells the same width. Obtained from source code:
+ * Workaround to make table cells the same width. Obtained from the following:
  * Author: Mottie
  * Code: https://stackoverflow.com/a/34277113
  */
-.table-city, .table-listing, .table-sold, .table-diff-dollar, .table-diff-percent, .table-status {
+.tablesorter-header, td {
   width: 90px;
   min-width: 90px;
   max-width: 90px;
 }
-.table-address, .table-date {
-  width: 110px;
-  min-width: 110px;
-  max-width: 110px;
+.table-address {
+  width: 130px;
+  min-width: 130px;
+  max-width: 130px;
+  white-space: normal;
+}
+.table-input, .table-checkbox {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+}
+table {
+  white-space: nowrap
 }

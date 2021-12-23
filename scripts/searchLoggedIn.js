@@ -167,9 +167,22 @@ function addInput(){
   modal.appendChild(newList);
 }
 
+/*
+ * For logged in users, make 'Go back to My Lists' link element visible.
+ * Otherwise, keep this element hidden.
+ */
+function goBackVisibility(){
+  if (localStorage.getItem('logged-in')){
+    document.getElementsByClassName("go-back")[0].classList.remove("hide");
+  } else {
+    document.getElementsByClassName("go-back")[0].classList.add("hide");
+  }
+}
+
 //Event listeners for when user is logged in
 window.addEventListener('load', function() {
-
+  //Check if user is logged in, then display Go Back icon
+  goBackVisibility();
   //Event listener for Add Selected table button
   document.getElementById("add-selected").addEventListener("click",addSelected);
   //Event listener for Select All table button

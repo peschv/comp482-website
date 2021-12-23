@@ -372,6 +372,10 @@ tbody tr:nth-child(even){
 #list-selector {
   font-size: 16px;
 }
+/* Go back icon when user is logged in */
+#go-back-icon {
+  transform: 180deg;
+}
 /* If screen size is less than 470px wide */
 @media only screen and (max-width: 470px) {
   /* Modal Content/Box */

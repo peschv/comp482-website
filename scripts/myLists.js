@@ -104,7 +104,7 @@ function deselectItems(tableName){
 */
 function addList(){
   //Prompt user to add a name for the new list
-  var listName = prompt("Please enter name of new list. You will then be redirected to Search Listings page to add items to your list.", "Enter list name...");
+  var listName = prompt("Please enter name of new list:", "Enter list name...");
 
   switch(listName) {
     case null: //User pressed cancel

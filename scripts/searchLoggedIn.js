@@ -172,7 +172,7 @@ function addInput(){
  * Otherwise, keep this element hidden.
  */
 function goBackVisibility(){
-  if (localStorage.getItem('logged-in')){
+  if (localStorage.getItem('logged-in') === "true"){
     document.getElementsByClassName("go-back")[0].classList.remove("hide");
   } else {
     document.getElementsByClassName("go-back")[0].classList.add("hide");

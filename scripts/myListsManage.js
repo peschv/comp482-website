@@ -25,8 +25,8 @@ var copyUrl = 0; //The url to be copied
  * Show or hide modal. If modal elements contains class 'hide', remove the class
  * 'hide' to show modal, otherwise add class 'hide' to hide the modal.
  */
- function showModal(listNum) {
-  var element = document.getElementById(listNum);
+ function showModal(inputId) {
+  var element = document.getElementById(inputId);
   if (element.classList.contains("hide")){
     element.classList.remove("hide");
   } else {
@@ -47,7 +47,7 @@ function shareList(listName){
   copyUrl = element.url;
 
   //Add url name for this list to share modal HTML element
-  document.getElementsByClassName("url-name")[0].innerHTML = obj.url;
+  document.getElementsByClassName("url-name")[0].innerHTML = copyUrl;
 
   //Display share modal
   document.getElementById("modal-share-lists").classList.remove("hide");
@@ -79,7 +79,7 @@ function shareModal(choice){
                 //After 3 seconds, hide success message and close modal
                 setTimeout(function(){
                       successMsg.classList.add("hide");
-                      showModal("modal-share-lists").fadeOut();
+                      showModal("modal-share-lists");
                 }, 3000);
 
             }, (err) => {
@@ -92,7 +92,7 @@ function shareModal(choice){
         break;
   }
   //Reopen previous Manage Lists modal
-  showModal("modal-manage-lists").fadeIn();
+  showModal("modal-manage-lists");
 }
 
 /*
@@ -150,10 +150,10 @@ function renameList(listName){
         break;
     default:
         //Get previous list name
-        var prevName = document.getElementById(listName+"-heading-name").textContent;
+        var prevName = document.getElementById(listName).textContent;
 
         //Add new name to inner HTML
-        document.getElementById(listName+"-heading-name").innerHTML = newName;
+        document.getElementById(listName).innerHTML = newName;
 
         //Get all list names
         var allLists = document.getElementsByClassName("manage-list-name");
@@ -177,6 +177,7 @@ function renameList(listName){
  * Take as parameter a list id element that is to be deleted. Display confirmation
  * window asking user to confirm if they want to delete the list. If they press
  * "Ok" then remove list name element from both the HTML and Manage Lists modal.
+ * If list is now empty, display message that there are no lists to display.
  */
 function deleteList(listName){
   //Open confirmation window
@@ -185,6 +186,13 @@ function deleteList(listName){
   if (a == true) {
     document.getElementById(listName).remove(); // Remove from HTML
     document.getElementById('manage-'+listName).remove(); //Remove from Manage Lists modal
+  }
+  //If there are currently no lists, hide "There are no lists to display" statements
+  if(document.getElementsByClassName("list-element").length === 0) {
+    //Hide 'no lists' statement in Manage Lists modal
+    document.getElementsByClassName("no-lists")[0].classList.remove("hide");
+    //Hide 'no lists' statement on the My Lists page
+    document.getElementsByClassName("no-lists")[1].classList.remove("hide");
   }
 }
 

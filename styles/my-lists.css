@@ -273,10 +273,14 @@ tbody tr:nth-child(even):hover{
 tbody input {
   cursor: pointer;
 }
-/* Modal elements when lists are empty */
+/* Modal elements when list is empty */
 .empty {
-  text-decoration: none;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+  color: gray !important;
+}
+/* Modal elements on hover when list is empty */
+.empty:hover {
+    color: gray !important;
 }
 /* Container for Deselect All and Delete Selected Items buttons for table  */
 .table-button-container {

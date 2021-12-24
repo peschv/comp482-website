@@ -25,7 +25,10 @@ function editName() {
   switch(newName) {
     case null: //User pressed cancel, do nothing
         break;
-    case "Enter name...": //User left field blank, display error message
+    case "": //User left field blank, display error
+        document.getElementsByClassName("error-message")[0].classList.remove("hide");
+        break;
+    case "Enter name...": //User left field blank by not changing placeholder text, display error message
         document.getElementsByClassName("error-message")[0].classList.remove("hide");
         break;
     default: //Add new name

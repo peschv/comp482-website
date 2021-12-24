@@ -146,6 +146,8 @@ function renameList(listName){
   switch(newName) {
     case null: //User pressed cancel
         break;
+    case "": //User left field blank
+      break;
     case "Enter new name...": //User left field blank
         break;
     default:

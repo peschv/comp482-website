@@ -394,11 +394,15 @@ function printTable(){
   var hiddenContainer = document.getElementsByClassName("selection-container")[0];
   var hiddenButtons = document.getElementsByClassName("header-buttons")[0];
   var hiddenPrint = document.getElementById("print-container");
+  var goBack = document.getElementsByClassName("go-back")[0];
+  var tableButtons = document.getElementsByClassName("table-buttons-container")[0];
 
   //Hide elements prior to printing
   hiddenContainer.classList.add("hide");
   hiddenButtons.classList.add("hide");
   hiddenPrint.classList.add("hide");
+  goBack.classList.add("hide");
+  tableButtons.classList.add("hide")
 
   window.print(); // Call print
 
@@ -406,6 +410,8 @@ function printTable(){
   hiddenContainer.classList.remove("hide");
   hiddenButtons.classList.remove("hide");
   hiddenPrint.classList.remove("hide");
+  goBack.classList.remove("hide");
+  tableButtons.classList.remove("hide");
 }
 
 /*

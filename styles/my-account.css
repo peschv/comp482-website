@@ -206,6 +206,11 @@ button:hover {
   color: #9c0500;
   font-style: italic;
 }
+/* Container for redirecting user to My Lists page */
+.redirect-container {
+  text-align: right;
+  margin: 35px;
+}
 
 
 /* Modal styling obtained from the following source code:
